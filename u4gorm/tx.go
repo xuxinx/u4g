@@ -22,7 +22,10 @@ func Transact(db *gorm.DB, f func(tx *gorm.DB) error) (err error) {
 		}
 
 		if err != nil {
-			err = tx.Rollback().Error
+			rberr := tx.Rollback().Error
+			if rberr != nil {
+				log.Printf("transact rollback failed: %v", rberr)
+			}
 		} else {
 			err = tx.Commit().Error
 		}
