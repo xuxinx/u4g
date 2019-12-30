@@ -1,4 +1,4 @@
-package u4g
+package u4slice
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSliceChunks(t *testing.T) {
+func TestChunks(t *testing.T) {
 	s := []interface{}{"1", "2", "3", "4", "5", "6"}
 
 	cases := []struct {
@@ -32,6 +32,6 @@ func TestSliceChunks(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		assert.Equal(t, c.expectRes, SliceChunks(s, c.size))
+		assert.Equal(t, c.expectRes, Chunks(s, c.size))
 	}
 }

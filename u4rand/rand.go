@@ -1,4 +1,4 @@
-package u4g
+package u4rand
 
 import (
 	"math/rand"
@@ -22,7 +22,7 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-func RandomString(length int) string {
+func RandString(length int) string {
 	s := make([]rune, length)
 	for i := 0; i < length; i++ {
 		s[i] = letters[rand.Intn(lettersLen)]
@@ -31,7 +31,7 @@ func RandomString(length int) string {
 	return string(s)
 }
 
-func RandomIntArray(length int) []int {
+func RandIntArray(length int) []int {
 	s := make([]int, length)
 	for i := 0; i < length; i++ {
 		s[i] = rand.Int()

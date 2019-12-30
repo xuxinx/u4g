@@ -1,4 +1,4 @@
-package u4g
+package u4str
 
 import (
 	"testing"

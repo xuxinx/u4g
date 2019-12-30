@@ -1,8 +1,8 @@
-package u4g
+package u4slice
 
 import "math"
 
-func SliceChunks(s []interface{}, size int) [][]interface{} {
+func Chunks(s []interface{}, size int) [][]interface{} {
 	l := int(math.Ceil(float64(len(s)) / float64(size)))
 	chunks := make([][]interface{}, l)
 
