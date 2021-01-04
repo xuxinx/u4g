@@ -21,3 +21,18 @@ func PrintlnJSON(vals ...interface{}) {
 		fmt.Println(c)
 	}
 }
+
+func SprintJSON(v interface{}) string {
+	c := ""
+	if s, ok := v.(string); ok {
+		c = s
+	} else {
+		j, err := json.MarshalIndent(v, "", "\t")
+		if err != nil {
+			fmt.Println("PrintlnJSON error:", err)
+		} else {
+			c = string(j)
+		}
+	}
+	return c
+}
